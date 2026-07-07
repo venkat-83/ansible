@@ -1,14 +1,16 @@
 - name: demo on prompt
   hosts: local
   connection: local
-  vars_prompt:
+  vars_prompt: 
     - name: username
-      prompy: "please enter username"
+      prompt: "Please enter username"
       private: false
+
     - name: password
-      prompt: "please enter password"
+      prompt: "Please enter password"
       private: true
-  tasks: 
-    - name: print information
-      debug:
-       msg: "username is: {{ username }}, password is: {{ password }}"
+
+  tasks:
+  - name: print information
+    debug:
+      msg: "Username is: {{ username }}, password is: {{ password }}"
